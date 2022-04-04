@@ -36,12 +36,6 @@ class Pet
     private $owner;
 
     /**
-     * @ORM\ManyToOne(targetEntity=PetType::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $pet_type;
-
-    /**
      * @ORM\OneToMany(targetEntity=Visit::class, mappedBy="pet")
      */
     private $visits;
@@ -88,18 +82,6 @@ class Pet
     public function setOwner(?Owner $owner): self
     {
         $this->owner = $owner;
-
-        return $this;
-    }
-
-    public function getPetType(): ?Pettype
-    {
-        return $this->pet_type;
-    }
-
-    public function setPetType(?Pettype $pet_type): self
-    {
-        $this->pet_type = $pet_type;
 
         return $this;
     }
