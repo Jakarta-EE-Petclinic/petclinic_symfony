@@ -33,6 +33,12 @@ class Visit
      */
     private $pet;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Vet::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $vet;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +76,18 @@ class Visit
     public function setPet(?Pet $pet): self
     {
         $this->pet = $pet;
+
+        return $this;
+    }
+
+    public function getVet(): ?Vet
+    {
+        return $this->vet;
+    }
+
+    public function setVet(?Vet $vet): self
+    {
+        $this->vet = $vet;
 
         return $this;
     }
