@@ -22,6 +22,12 @@ class Pettype
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Pettype::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $relation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class Pettype
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getRelation(): ?self
+    {
+        return $this->relation;
+    }
+
+    public function setRelation(?self $relation): self
+    {
+        $this->relation = $relation;
 
         return $this;
     }
