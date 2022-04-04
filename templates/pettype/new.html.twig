@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pettype{% endblock %}
+
+{% block body %}
+    <h1>Create new Pettype</h1>
+
+    {{ include('pettype/_form.html.twig') }}
+
+    <a href="{{ path('app_pettype_index') }}">back to list</a>
+{% endblock %}

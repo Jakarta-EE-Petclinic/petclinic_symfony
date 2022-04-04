@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\PettypeRepository;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=PettypeRepository::class)
+ * @ORM\Entity()
  */
 class Pettype
 {
