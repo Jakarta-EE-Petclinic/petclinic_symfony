@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Pettype;
-use App\Form\PettypeType;
+use App\Form\Pettype1Type;
 use App\Repository\PettypeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +31,7 @@ class PettypeController extends AbstractController
     public function new(Request $request, PettypeRepository $pettypeRepository): Response
     {
         $pettype = new Pettype();
-        $form = $this->createForm(PettypeType::class, $pettype);
+        $form = $this->createForm(Pettype1Type::class, $pettype);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -60,7 +60,7 @@ class PettypeController extends AbstractController
      */
     public function edit(Request $request, Pettype $pettype, PettypeRepository $pettypeRepository): Response
     {
-        $form = $this->createForm(PettypeType::class, $pettype);
+        $form = $this->createForm(Pettype1Type::class, $pettype);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

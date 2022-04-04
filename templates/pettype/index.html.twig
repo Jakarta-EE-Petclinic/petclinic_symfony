@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Name</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -16,6 +17,7 @@
         {% for pettype in pettypes %}
             <tr>
                 <td>{{ pettype.id }}</td>
+                <td>{{ pettype.name }}</td>
                 <td>
                     <a href="{{ path('app_pettype_show', {'id': pettype.id}) }}">show</a>
                     <a href="{{ path('app_pettype_edit', {'id': pettype.id}) }}">edit</a>
@@ -23,7 +25,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="2">no records found</td>
+                <td colspan="3">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
