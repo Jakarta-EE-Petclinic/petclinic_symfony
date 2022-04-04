@@ -27,6 +27,12 @@ class Visit
      */
     private $information;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Pet::class, inversedBy="visits")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pet;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +58,18 @@ class Visit
     public function setInformation(string $information): self
     {
         $this->information = $information;
+
+        return $this;
+    }
+
+    public function getPet(): ?Pet
+    {
+        return $this->pet;
+    }
+
+    public function setPet(?Pet $pet): self
+    {
+        $this->pet = $pet;
 
         return $this;
     }

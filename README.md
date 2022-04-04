@@ -9,3 +9,5 @@
 
 ## doc
 * https://symfony.com/doc/5.4/index.html
+* https://www.doctrine-project.org/projects/doctrine-orm/en/current/reference/association-mapping.html
+* 
