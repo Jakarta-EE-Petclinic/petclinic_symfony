@@ -10,3 +10,4 @@
 
 ## work
 * https://symfony.com/doc/current/page_creation.html
+* https://symfony.com/doc/5.4/components/uid.html#installation
