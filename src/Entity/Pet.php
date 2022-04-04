@@ -92,12 +92,12 @@ class Pet
         return $this;
     }
 
-    public function getPetType(): ?PetType
+    public function getPetType(): ?Pettype
     {
         return $this->pet_type;
     }
 
-    public function setPetType(?PetType $pet_type): self
+    public function setPetType(?Pettype $pet_type): self
     {
         $this->pet_type = $pet_type;
 
