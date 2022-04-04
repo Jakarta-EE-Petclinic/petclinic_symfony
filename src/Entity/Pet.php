@@ -40,6 +40,12 @@ class Pet
      */
     private $visits;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Pettype::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pettype;
+
     public function __construct()
     {
         $this->visits = new ArrayCollection();
@@ -112,6 +118,18 @@ class Pet
                 $visit->setPet(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPettype(): ?Pettype
+    {
+        return $this->pettype;
+    }
+
+    public function setPettype(?Pettype $pettype): self
+    {
+        $this->pettype = $pettype;
 
         return $this;
     }
